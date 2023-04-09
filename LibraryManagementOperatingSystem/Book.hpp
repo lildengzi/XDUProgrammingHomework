@@ -23,16 +23,17 @@ private:
     std::string m_name;
     unsigned short int m_quantity;
 public:
-    Book(/* args */);
-    ~Book();
+    Book(const std::string& id, const std::string& name, const unsigned short int& quantity): m_id(id), m_name(name), m_quantity(quantity)
+    {
+
+    }
+
+    isFullyBorrowed() const
+    {
+        return (this->m_quantity == 0);
+    }
+
+    
 };
-
-Book::Book(/* args */)
-{
-}
-
-Book::~Book()
-{
-}
 
 #endif //_Book_HPP

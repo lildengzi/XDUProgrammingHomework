@@ -14,30 +14,40 @@
 // Do not include extra header files
 // =======================
 #include "LibManageOS.hpp"
+#include "command.hpp"
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief 
+ * @warning 该程序还不能运行
+ */
 int main(int argc, char* argv[])
 {
-    // switch ()
-    // {
-    // case OPEN:
-    //     cout << "a" << endl;
-    //     // deviceOpen();
-    //     break;
-    // case CLOSE:
-    //     cout << "b" << endl;
-    //     // deviceClose();
-    //     break;
-    // case QUERY:
-    //     cout << "c" << endl;
-    //     // deviceQuery();
-    //     break;
-    // default:
-    //     cout << "你输入的格式有误，请重新输入" << endl;
-    //     break;
-    // }
-
+    while (1)
+    {
+        string command[100];
+        Command CMD;
+        switch (argv[1])
+        {
+        case CMD.selfCommand(CMD.command[0]):
+            cout << "a" << endl;
+            // deviceOpen();
+            break;
+        case CMD.selfCommand(CMD.command[3]):
+            cout << "b" << endl;
+            // deviceClose();
+            break;
+        case CMD.selfCommand(CMD.command[0]):
+            cout << "c" << endl;
+            // deviceQuery();
+            break;
+        default:
+            cout << "你输入的格式有误，请重新输入" << endl;
+            break;
+        }
+    }
+    
     getchar();
     return 0;
 }
@@ -51,12 +61,6 @@ int main(int argc, char* argv[])
 编写一个程序模拟图书管理系统。用户分为管理员和读者两类，分别显示不同文本格式菜单，
 通过菜单项对应数字进行选择。
 可根据图书名称或编号进行图书信息查询，可查询某本书现在被哪些读者借走。
-
-命令行参数如下：
-
-Libsim –a(-u) xxxx
-
-第一个参数为可执行程序名称；第二个参数为用户身份，-a表示管理员，-u表示读者；第三个参数为用户名
 
 重点：
 
