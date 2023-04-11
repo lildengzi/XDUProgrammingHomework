@@ -1,54 +1,81 @@
 /**
  * @file main.cpp
- * @author your name (you@domain.com)
- * @brief 
+ * @author lil_DengZi
+ * @brief 图书馆管理系统
  * @version 0.1
- * @date 2023-04-05
- * @include LibManageOS.hpp Book.hpp Reader.hpp Manager.hpp
+ * @date 2023-04-10
  * @copyright Copyright (c) 2023 lil_DengZi
  * 
  */
 
 // === Region: Headers ===
-// iostream,string are included.
 // Do not include extra header files
 // =======================
-#include "LibManageOS.hpp"
-#include "command.hpp"
+#include "LibManageOS.h"
+
 #include <iostream>
 using namespace std;
 
 /**
- * @brief 
- * @warning 该程序还不能运行
+ * @brief 程序入口
  */
 int main(int argc, char* argv[])
 {
-    while (1)
-    {
-        string command[100];
-        Command CMD;
-        switch (argv[1])
-        {
-        case CMD.selfCommand(CMD.command[0]):
-            cout << "a" << endl;
-            // deviceOpen();
-            break;
-        case CMD.selfCommand(CMD.command[3]):
-            cout << "b" << endl;
-            // deviceClose();
-            break;
-        case CMD.selfCommand(CMD.command[0]):
-            cout << "c" << endl;
-            // deviceQuery();
-            break;
-        default:
-            cout << "你输入的格式有误，请重新输入" << endl;
-            break;
-        }
-    }
-    
-    getchar();
+    LibManageOS os;
+	os.init();
+	string str;
+	/**
+	 * @code {.Libsim -a 2203}
+	 * if(strcmp("Libsim", argv[0]))
+	 * {
+	 * 		for(int i = 1; i < argc; i++)
+	 * 		{
+	 * 			if(strcmp("-a", argv[i]))
+	 * 			{
+	 * 				
+	 * 			}
+	 * 			...
+	 * 		}
+	 * }
+	 * else if(strcmp("exit", argv[0]))
+	 * {
+	 * 	...
+	 * }
+	 * else
+	 * {
+	 * 		cerr << "ERROR" << endl;
+	 * }
+	 * 
+	 * cout << "~su username >>>";
+	 * @endcode
+	 */
+
+	while (true)
+	{
+		os.helpMenu();
+		cout << "~su tourist>>>";
+		getline(cin, str);
+		switch (os.receiveCommand(str))//获取命令对应整数值
+		{
+		case 0: //退出
+			os.exitMenu();
+			break;
+		case 1: //帮助文档
+			os.helpMenu();
+			break;
+		case 2://读者菜单
+			os.readerSystem();
+		case 3://管理员菜单
+			os.manageSystem();
+		case 4://root菜单
+			os.root();
+		default:
+			cout << "你输入有误" << endl;
+			break;
+		}
+		system("pause");
+	}
+
     return 0;
 }
 

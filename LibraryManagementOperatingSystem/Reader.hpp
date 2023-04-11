@@ -8,6 +8,7 @@
 
 #include "AbstractUser.hpp"
 #include "Book.hpp"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -21,15 +22,21 @@
  */
 class Reader: public AbstractUser
 {
-private:
+public:
     std::string m_number;
     std::string m_name;
     std::vector<Book> m_book_vec;
 public:
 
+    /**
+     * @brief Construct a new Reader object
+     * 
+     * @param number 
+     * @param name 
+     */
     Reader(const std::string& number, const std::string& name): m_number(number), m_name(name)
     {
-        m_book_vec.clear();
+        m_book_vec{0};
     }
 
     bool borrowBook()
@@ -37,6 +44,21 @@ public:
         std::string t_bookName;
         std::cout << "请输入你想要借的书籍名" << std::endl;
         std::cin >> t_bookName;
+        
+        for (int i = 0; i < count; i++) // 不同书籍数量
+        {
+            unique_ptr<Book>u_ptr_book(nullptr);
+            if (book->isBookExit(t_bookName))
+            {
+                
+                if (book->isFullyBorrowed())
+                {
+                    /* code */
+                }
+                
+            }
+            
+        }
         
         
         return false;

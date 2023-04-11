@@ -10,9 +10,7 @@
 #include <string>
 
 /** === Region: class AbstractUser ===
- * @class AbstractUser
  * @todo 管理员和读者共有功能
- * @fn find() 查询
  */
 class AbstractUser
 {

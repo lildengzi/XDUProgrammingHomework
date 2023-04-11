@@ -24,7 +24,6 @@ typedef unsigned short int usInt; // unsigned short int
 const int MAX_LENGTH = 10000;// size of num
 
 /** === Region: class HighNumber ===
- * @class HighNumber
  * @param number string 大数的字符串形式.
  * @param big short* 存放大数的数组.
  * @param count usInt 记录big数组长度.
@@ -37,11 +36,24 @@ private:
     std::string number;
     short big[MAX_LENGTH]={0};
     usInt count;
-    bool FU_SHU = false;
+    bool FU_SHU;
 public:
-    HighNumber();
-    ~HighNumber();
 
+    HighNumber(): count(0), FU_SHU(false)
+    {
+
+    }
+
+    /**
+     * @brief numCmp 比较两个大数的大小 >
+     * @details None
+     * @return HighNumber
+     *     @retval >0 正整数
+     *     @retval =0 0
+     *     @retval <0 负整数
+     * @bug 没有添加非数字字符串的判断
+     * @note None
+     */
     bool numCmp(const HighNumber &HN1, const HighNumber &HN2) const
     {
         if (HN2.count > HN1.count) return true;
@@ -50,6 +62,12 @@ public:
             return false;
     }
 
+    /**
+    * @brief string赋值HighNumber
+    * @details None
+    * @return HighNumber
+    * @note None
+    */
     HighNumber& operator=(const std::string &str)
     {
         this->number = str;
@@ -60,11 +78,10 @@ public:
         }
         return *this;
     }
-
+    
     HighNumber operator+(HighNumber &num)
     {
         HighNumber answer;
-
         int max = num.count > this->count ? num.count : this->count;
 
         for(int i = 0; i < max; i++)
@@ -107,16 +124,12 @@ public:
     }
 };
 
-HighNumber::HighNumber(): count(0)
-{
-
-}
-
-HighNumber::~HighNumber()
-{
-
-}
-
+/**
+ * @brief 输出重载
+ * @param out std::ostream& 局部输入流
+ * @param high const HighNumber& 局部大数
+ * @return std::ostream& 
+ */
 std::ostream& operator<<(std::ostream& out, const HighNumber& high)
 {
     bool isZero = false;

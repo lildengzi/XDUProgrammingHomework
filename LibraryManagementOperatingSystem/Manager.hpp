@@ -8,24 +8,34 @@
 
 #include "Book.hpp"
 #include "AbstractUser.hpp"
+#include "LibManageOS.h"
+
 #include <iostream>
 #include <string>
 #include <memory>
+#include <map>
 
 /** === Region: class Manager ===
- * @class Manager
  * @todo 管理员菜单包括图书和读者信息录入、修改和删除。
- * @param m_number string 编号
+ * @class LibManageOS
  */
 class Manager: public AbstractUser
 {
+    friend LibManageOS::managerMenu();
 private:
 
 public:
-    bool addBook()
+    /**
+     * @brief 添加书籍
+     * @param t_id 书籍id
+     * @param t_name 书籍名
+     * @param t_quantity 进货数量
+     * @return bool 
+     *      @retval true 添加成功
+     *      @retval false 添加失败
+     */
+    bool addBook(const std::string& t_id, const std::string& t_name, const int& t_quantity)
     {
-        std::string t_id = "114514", t_name = "三体";
-        int t_quantity = 0;
         std::cout << "请输入编号" << std::endl;
         std::cin >> t_id;
         std::cout << "请输入姓名" << std::endl;
@@ -47,7 +57,24 @@ public:
         return false;
     }
 
-
+    /**
+     * @brief 添加读者
+     * @param t_id 读者id
+     * @param t_name 读者名
+     * @return bool 
+     *      @retval true 添加成功
+     *      @retval false 添加失败
+     */
+    bool addReader(const std::string& t_id, const std::string& t_name)
+    {
+        std::cout << "请输入编号" << std::endl;
+        std::cin >> t_id;
+        std::cout << "请输入姓名" << std::endl;
+        std::cin >> t_name;
+        
+        Reader *reader = new Reader();
+        return false;
+    }
 };
 
 #endif //_Manager_HPP
