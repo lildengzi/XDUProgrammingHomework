@@ -12,17 +12,25 @@
 // Do not include extra header files
 // =======================
 #include "LibManageOS.h"
-
 #include <iostream>
+#include <memory>
 using namespace std;
 
 /**
- * @brief 程序入口
+ * @brief 主函数
+ * @details 程序唯一入口
+ *
+ * @param[in] argc 命令参数个数
+ * @param[in] argv 命令参数指针数组
+ * @return 程序执行成功与否
+ *     @retval 0 程序执行成功
+ *     @retval 1 程序执行失败
+ * @note 这里只是一个简单的例子
  */
 int main(int argc, char* argv[])
 {
-    LibManageOS os;
-	os.init();
+    unique_ptr<LibManageOS>os(new LibManageOS);
+	os->init();
 	string str;
 	/**
 	 * @code {.Libsim -a 2203}
@@ -49,26 +57,24 @@ int main(int argc, char* argv[])
 	 * cout << "~su username >>>";
 	 * @endcode
 	 */
-
 	while (true)
 	{
-		os.helpMenu();
-		cout << "~su tourist>>>";
+		os->helpMenu();
 		getline(cin, str);
-		switch (os.receiveCommand(str))//获取命令对应整数值
+		switch ()//获取命令对应整数值
 		{
 		case 0: //退出
-			os.exitMenu();
+			os->exitMenu();
 			break;
 		case 1: //帮助文档
-			os.helpMenu();
+			os->helpMenu();
 			break;
 		case 2://读者菜单
-			os.readerSystem();
+			os->readerSystem();
+			break;
 		case 3://管理员菜单
-			os.manageSystem();
-		case 4://root菜单
-			os.root();
+			os->manageSystem();
+			break;
 		default:
 			cout << "你输入有误" << endl;
 			break;

@@ -20,7 +20,7 @@ void LibManageOS::exitMenu()
 	exit(0);
 }
 
-void LibManageOS::helpMenu()
+inline void LibManageOS::helpMenu()
 {
     cout << "------------" << endl;
     cout << "Libsim (use this system)" << endl;
@@ -30,7 +30,7 @@ void LibManageOS::helpMenu()
     cout << "------------" << endl;
 }
 
-void LibManageOS::readerMenu()
+inline void LibManageOS::readerMenu()
 {
     cout << "---------------" << endl;
     cout << "-BTM (退至菜单)" << endl;
@@ -40,7 +40,7 @@ void LibManageOS::readerMenu()
     cout << "---------------" << endl;
 }
 
-void LibManageOS::managerMenu()
+inline void LibManageOS::managerMenu()
 {
     cout << "---------------" << endl;
     cout << "-BTM (退至菜单)" << endl;
@@ -99,7 +99,7 @@ void LibManageOS::init()
 
 void LibManageOS::readerSystem()
 {
-
+    
 }
 
 void LibManageOS::manageSystem()
@@ -109,7 +109,15 @@ void LibManageOS::manageSystem()
     {
         this->managerMenu();
         getline(cin, str);
+        switch (expression)
+        {
+        case /* constant-expression */:
+            /* code */
+            break;
         
+        default:
+            break;
+        }
     }
     
 }

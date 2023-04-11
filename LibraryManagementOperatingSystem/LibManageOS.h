@@ -41,40 +41,39 @@ public:
     std::vector<Book> m_book_vec;
     std::map<Reader, std::string> m_reader_map;
 public:
-
     /**
      * @brief 退出程序
      */
-    inline void exitMenu();
+    void exitMenu();
+    
+    void helpMenu();
     /**
-    * @brief 主函数
-    * @details 程序唯一入口
-    *
-    * @param argc 命令参数个数
-    * @param argv 命令参数指针数组
-    * @return 程序执行成功与否
-    *     @retval 0 程序执行成功
-    *     @retval 1 程序执行失败
-    * @note 这里只是一个简单的例子
+    * @brief 读者菜单
     */
-    inline void helpMenu();
     void readerMenu();
+    /**
+    * @brief 管理者菜单
+    */
     void managerMenu();
     /**
      * @brief 保存文件
      * 保存内容包含
+     * 读者信息 书籍信息
      */
     void save();
     /**
      * @brief 初始化文件
-     * 
+     * 初始化内容包含
+     * 读者信息 书籍信息
      */
     void init();
     /**
-     * @brief 读者信息
-     * 
+     * @brief 读者系统
      */
     void readerSystem();
+    /**
+     * @brief 管理者系统
+     */
     void manageSystem();
 };
 
