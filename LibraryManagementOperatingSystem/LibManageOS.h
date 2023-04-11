@@ -29,17 +29,18 @@
  * @todo helpMenu 帮助菜单
  *       readerMenu 读者菜单
  *       managerMenu 管理员菜单  
- * @brief 图书馆操作系统,用户分为管理员和读者两类，分别显示不同文本格式菜单，
- * 通过菜单项对应数字进行选择。可根据图书名称或编号进行图书信息查询，可查询某本书现在被哪些读者借走。
+ * @brief 图书馆操作系统,用户分为管理员和读者两类，
+ * 分别显示不同文本格式菜单，通过菜单项对应数字进行选择。
+ * 可根据图书名称或编号进行图书信息查询，可查询某本书现在被哪些读者借走。
  * @param m_book_vec 保存书籍信息
  * @param m_reader_map 保存读者信息和密码
  */
 class LibManageOS
 {
-    friend class Command;
 public:
+    Command command;
     std::vector<Book> m_book_vec;
-    std::map<Reader, std::string> m_reader_map;
+    std::map<std::string, Reader> m_reader_map;
 public:
     /**
      * @brief 退出程序

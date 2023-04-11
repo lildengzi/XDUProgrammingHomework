@@ -34,17 +34,16 @@ public:
      */
     bool addBook(const std::string& t_id, const std::string& t_name, const int& t_quantity)
     {
-        std::unique_ptr<Book>uptr_book(new Book(t_id, t_name, t_quantity));
-        if (uptr_book != 0)
-        {
-            std::cout << "添加成功" << std::endl;
-            return true;
-        }
-        else
-        {
-            std::cout << "添加失败" << std::endl;
-            return false;
-        }
+        // if (uptr_book != 0)
+        // {
+        //     std::cout << "添加成功" << std::endl;
+        //     return true;
+        // }
+        // else
+        // {
+        //     std::cout << "添加失败" << std::endl;
+        //     return false;
+        // }
 
         return false;
     }
@@ -57,9 +56,8 @@ public:
      *      @retval true 添加成功
      *      @retval false 添加失败
      */
-    bool addReader(const std::string& t_id, const std::string& t_name)
+    bool addReader()
     {
-        Reader *reader = new Reader();
         return false;
     }
 };

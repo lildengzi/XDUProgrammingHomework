@@ -29,9 +29,9 @@ using namespace std;
  */
 int main(int argc, char* argv[])
 {
-    unique_ptr<LibManageOS>os(new LibManageOS);
+    LibManageOS *os = new LibManageOS;
 	os->init();
-	string str;
+	string str = *argv;
 	/**
 	 * @code {.Libsim -a 2203}
 	 * if(strcmp("Libsim", argv[0]))
@@ -60,8 +60,7 @@ int main(int argc, char* argv[])
 	while (true)
 	{
 		os->helpMenu();
-		getline(cin, str);
-		switch ()//获取命令对应整数值
+		switch (os->command.receiveCommand(str))//获取命令对应整数值
 		{
 		case 0: //退出
 			os->exitMenu();

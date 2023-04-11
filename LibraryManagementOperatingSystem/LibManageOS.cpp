@@ -1,6 +1,3 @@
-#include "Manager.hpp"
-#include "Book.hpp"
-#include "Reader.hpp"
 #include "LibManageOS.h"
 
 #include <iostream>
@@ -62,8 +59,8 @@ void LibManageOS::save()
     
     for (auto &&attribute : m_reader_map)
     {
-        reader_ofs << attribute.first.m_number << "\t" << attribute.first.m_name << "\t";
-        for (auto &&t_vec : attribute.first.m_book_vec)
+        reader_ofs << attribute.first << "\t";
+        for (auto &&t_vec : attribute.second)
         {
             reader_ofs << t_vec.m_id << "\t" << t_vec.m_name << "\t";
         }
@@ -99,7 +96,22 @@ void LibManageOS::init()
 
 void LibManageOS::readerSystem()
 {
+    string str;
+    while (1)
+    {
+        this->readerMenu();
+        getline(cin, str);
+        switch (command.receiveCommand(str))
+        {
+        case 0:
+            /* code */
+            break;
+        default:
+            break;
+        }
+    }
     
+        
 }
 
 void LibManageOS::manageSystem()
@@ -111,7 +123,7 @@ void LibManageOS::manageSystem()
         getline(cin, str);
         switch (expression)
         {
-        case /* constant-expression */:
+        case 0:
             /* code */
             break;
         

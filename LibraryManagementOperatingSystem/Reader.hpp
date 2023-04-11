@@ -1,5 +1,5 @@
 // === Region: Headers ===
-// iostream,string are included.
+// iostream,string and vector are included.
 // Do not include extra header files
 // =======================
 #pragma once
@@ -15,13 +15,12 @@
 
 /** === Region: class Reader ===
  * @class AbstractUser
- * @param m_number string 编号
- * @param m_name string 姓名
+ * @param m_number string 编号继承自AbstractUser
+ * @param m_name string 姓名继承自AbstractUser
  * @param book_vec vector<Book> 借走的书
  * @todo 读者信息至少应包括：编号、姓名、所借图书。
  * @todo 读者菜单包括借书、还书、查询等功能。
  */
-template<class Book_attribute>
 class Reader: public AbstractUser
 {
 public:
@@ -33,9 +32,11 @@ public:
      * @param number 
      * @param name 
      */
-    Reader(const std::string& number, const std::string& name): m_number(number), m_name(name)
+    Reader(const std::string& number, const std::string& name)
     {
-        m_book_vec{0};
+        m_number = number;
+        m_name = name;
+        m_book_vec.clear();
     }
     /**
      * @brief 借书
@@ -45,22 +46,22 @@ public:
      *      @retval true 借书成功
      *      @retval false 借书失败
      */
-    bool borrowBook(const Book_attribute& t_bookNameOrId)
+    bool borrowBook(const std::string& t_bookNameOrId)
     {        
-        for (int i = 0; i < count; i++) // 不同书籍数量
-        {
+        // for (int i = 0; i < count; i++) // 不同书籍数量
+        // {
             
-            if (book->isBookExit(t_bookNameOrId))
-            {
+        //     if (this->isBookExit(t_bookNameOrId))
+        //     {
                 
-                if (book->isFullyBorrowed())
-                {
-                    /* code */
-                }
+        //         if (book->isFullyBorrowed())
+        //         {
+        //             /* code */
+        //         }
                 
-            }
+        //     }
             
-        }
+        // }
         return false;
     }
     /**
@@ -71,7 +72,7 @@ public:
      *      @retval true 还书成功
      *      @retval false 还书失败
      */
-    bool returnBook(const Book_attribute& t_bookNameOrId)
+    bool returnBook(const std::string& t_bookNameOrId)
     {
 
         return false;
