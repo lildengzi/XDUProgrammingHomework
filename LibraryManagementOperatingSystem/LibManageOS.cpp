@@ -10,6 +10,30 @@ using namespace std;
  */
 constexpr auto FILENAME = "BookBorrowingRecords.txt";
 
+LibManageOS::LibManageOS()
+{
+    this->init();
+}
+
+LibManageOS::~LibManageOS()
+{
+    if (manager != NULL)
+    {
+        delete manager;
+        manager = nullptr;
+    }
+    if (reader != NULL)
+    {
+        delete reader;
+        reader = nullptr;
+    }
+    if (book != NULL)
+    {
+        delete book;
+        book = nullptr;
+    }
+}
+
 void LibManageOS::exitMenu()
 {
 	cout << "欢迎下次使用" << endl;
@@ -57,16 +81,15 @@ void LibManageOS::save()
         system_ofs << attribute.m_id << "\t" << attribute.m_name << "\t" << attribute.m_quantity << endl;
     }
     
-    for (auto &&attribute : m_reader_map)
+    for (auto &&[key, val] : m_reader_map)
     {
-        reader_ofs << attribute.first << "\t";
-        for (auto &&t_vec : attribute.second)
+        reader_ofs << key << "\t" << val.m_number << "\t" << val.m_name << "\t";
+        for (auto &&i : val.m_borrowBook_vec)
         {
-            reader_ofs << t_vec.m_id << "\t" << t_vec.m_name << "\t";
+            reader_ofs << i << "\t";
         }
-        reader_ofs << attribute.second << endl;
+        reader_ofs << endl;
     }
-    
 	ofs.close();
 }
 
@@ -81,14 +104,14 @@ void LibManageOS::init()
     {
         system_ifs >> attribute.m_id >> attribute.m_name >> attribute.m_quantity;
     }
-    for (auto &&attribute : m_reader_map)
+
+    for (auto &&[key, val] : m_reader_map)
     {
-        reader_ifs >> attribute.first.m_number >> attribute.first.m_name;
-        for (auto &&t_vec : attribute.first.m_book_vec)
+        reader_ifs >> key >> val.m_number >> val.m_name;
+        for (auto &&i : val.m_borrowBook_vec)
         {
-            reader_ifs >> t_vec.m_id >> t_vec.m_name;
+            reader_ifs >> i;
         }
-        reader_ifs >> attribute.second;
     }
     
 	ifs.close();
@@ -101,17 +124,32 @@ void LibManageOS::readerSystem()
     {
         this->readerMenu();
         getline(cin, str);
-        switch (command.receiveCommand(str))
+        switch (command.receiveCommand(str, 114514))
         {
-        case 0:
-            /* code */
+        case 0://退至主菜单
+            return;
+        case 1://注册
+            signUp();
+            break;
+        case 3://借书
+            reader.borrowBook();
+            break;
+        case 4://还书
+            reader.returnBook();
+            break;
+        case 5://查询
+            reader.findBook();
             break;
         default:
+            cout << "你的输入有误" << endl;
             break;
         }
     }
-    
-        
+}
+
+void LibManageOS::signUp()
+{
+
 }
 
 void LibManageOS::manageSystem()
@@ -121,13 +159,21 @@ void LibManageOS::manageSystem()
     {
         this->managerMenu();
         getline(cin, str);
-        switch (expression)
+        switch (command.receiveCommand(str, true))
         {
-        case 0:
-            /* code */
+        case 0://退至主菜单
+            return;
+        case 1://添加书籍
+            manager.addBook();
             break;
-        
+        case 2://添加读者
+            manager.addReader();
+            break;
+        case 3://查询书籍
+            manager.findBook();
+            break;
         default:
+            cout << "你的输入有误" << endl;
             break;
         }
     }

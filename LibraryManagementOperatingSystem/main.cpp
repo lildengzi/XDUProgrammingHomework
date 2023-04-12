@@ -30,7 +30,6 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     LibManageOS *os = new LibManageOS;
-	os->init();
 	string str = *argv;
 	/**
 	 * @code {.Libsim -a 2203}
@@ -89,13 +88,11 @@ int main(int argc, char* argv[])
 涉及知识点：文件读写、内存管理、结构体定义、基本数据结构、高级格式化输入输出
 
 要求：
-
 编写一个程序模拟图书管理系统。用户分为管理员和读者两类，分别显示不同文本格式菜单，
 通过菜单项对应数字进行选择。
 可根据图书名称或编号进行图书信息查询，可查询某本书现在被哪些读者借走。
 
 重点：
-
 程序框架：主菜单，子菜单，用户身份（读者、管理员）；
 
 设计思想：结构化程序设计，自顶向下，先设计主模块，再设计子模块。模块用函数实现。

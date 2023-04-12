@@ -18,7 +18,7 @@
  */
 class Book
 {
-private:
+public:
     std::string m_id;
     std::string m_name;
     unsigned short int m_quantity;
@@ -33,7 +33,6 @@ public:
     {
 
     }
-
     /**
     * @brief isFullyBorrowed 书是否被借走
     * @details 程序唯一入口

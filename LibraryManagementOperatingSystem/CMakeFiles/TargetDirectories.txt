@@ -1,0 +1,3 @@
+D:/Repo/vscodeProject/vscCppworking/homework/LibraryManagementOperatingSystem/CMakeFiles/libsim.dir
+D:/Repo/vscodeProject/vscCppworking/homework/LibraryManagementOperatingSystem/CMakeFiles/ALL_BUILD.dir
+D:/Repo/vscodeProject/vscCppworking/homework/LibraryManagementOperatingSystem/CMakeFiles/ZERO_CHECK.dir

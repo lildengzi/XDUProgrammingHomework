@@ -1,8 +1,8 @@
 /**
- * @file LibMangeOS.hpp
+ * @file LibManageOS.h
  * @author lil_DengZi
  * @brief 
- * @version 0.1beta
+ * @version v0.1beta
  * @date 2023-04-11
  * 
  * @copyright Copyright (c) 2023 lil_DengZi
@@ -24,11 +24,10 @@
 
 #include <iostream>
 #include <string>
+#include <map>
+#include <vector>
 
 /** === Region: class LibManageOS ===
- * @todo helpMenu 帮助菜单
- *       readerMenu 读者菜单
- *       managerMenu 管理员菜单  
  * @brief 图书馆操作系统,用户分为管理员和读者两类，
  * 分别显示不同文本格式菜单，通过菜单项对应数字进行选择。
  * 可根据图书名称或编号进行图书信息查询，可查询某本书现在被哪些读者借走。
@@ -37,16 +36,22 @@
  */
 class LibManageOS
 {
-public:
-    Command command;
+private:
+    Manager manager;
+    Reader reader;
+    Book book;
     std::vector<Book> m_book_vec;
     std::map<std::string, Reader> m_reader_map;
 public:
+    Command command;
+public:
+    LibManageOS();
+    ~LibManageOS();
+
     /**
      * @brief 退出程序
      */
     void exitMenu();
-    
     void helpMenu();
     /**
     * @brief 读者菜单
@@ -56,22 +61,29 @@ public:
     * @brief 管理者菜单
     */
     void managerMenu();
+
     /**
      * @brief 保存文件
-     * 保存内容包含
+     * 保存内容
      * 读者信息 书籍信息
      */
     void save();
     /**
      * @brief 初始化文件
-     * 初始化内容包含
+     * 初始化内容
      * 读者信息 书籍信息
      */
     void init();
+
     /**
      * @brief 读者系统
      */
     void readerSystem();
+    /**
+     * @brief 注册
+     */
+    void signUp();
+
     /**
      * @brief 管理者系统
      */

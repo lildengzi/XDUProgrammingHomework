@@ -16,17 +16,36 @@ public:
 
 public:
     /**
-     * @brief 从switch语句中获取命令并解析
+     * @brief 从命令行中获取命令并解析
+     * @todo 解析命令
      * @param command 字符串
      * @return int 命令行转化成整型
      *      @retval 0 退出系统
      *      @retval 1 帮助文档
      *      @retval 2 读者菜单
      *      @retval 3 管理员菜单    
-     * @note 
      */
     int receiveCommand(const std::string& command)
     {
         return 0;
+    }
+    /**
+     * @brief 从switch语句中获取命令并解析
+     * @todo 解析命令
+     * @param command 字符串
+     * @return int 命令行转化成整型
+     *      @retval 0 退出系统
+     *      @retval 1 帮助文档
+     *      @retval 2 读者菜单
+     *      @retval 3 管理员菜单    
+     */
+    int receiveCommand(const std::string& command, int)
+    {
+        return 114514;
+    }
+
+    int receiveCommand(const std::string& command, bool)
+    {
+        return 114514;
     }
 };
