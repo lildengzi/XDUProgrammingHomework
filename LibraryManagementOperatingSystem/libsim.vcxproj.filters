@@ -9,9 +9,32 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\AbstractUser.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Book.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Reader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Manager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <CustomBuild Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{BAB5CE27-0A92-359D-9724-A1169E04B7B1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{A90AD8AB-6B7F-346A-A690-94234B7E72C7}</UniqueIdentifier>
     </Filter>

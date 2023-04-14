@@ -1,0 +1,41 @@
+﻿  LibManageOS.cpp
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Manager.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Book.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\AbstractUser.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Reader.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(40,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(55,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(56,21): error C2065: “t_str”: 未声明的标识符
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(56,30): error C2059: 语法错误:“)”
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(57,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(131,19): error C2660: “Reader::borrowBook”: 函数不接受 0 个参数
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Reader.hpp(47,10): message : 参见“Reader::borrowBook”的声明
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(131,19): message : 尝试匹配参数列表“()”时
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(134,19): error C2660: “Reader::returnBook”: 函数不接受 0 个参数
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Reader.hpp(73,10): message : 参见“Reader::returnBook”的声明
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(134,19): message : 尝试匹配参数列表“()”时
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(137,19): error C2660: “Reader::findBook”: 函数不接受 0 个参数
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Reader.hpp(85,10): message : 参见“Reader::findBook”的声明
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(137,19): message : 尝试匹配参数列表“()”时
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(163,20): error C2660: “Manager::addBook”: 函数不接受 0 个参数
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Manager.hpp(36,10): message : 参见“Manager::addBook”的声明
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(163,20): message : 尝试匹配参数列表“()”时
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(169,20): error C2660: “Manager::findBook”: 函数不接受 0 个参数
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Manager.hpp(71,10): message : 参见“Manager::findBook”的声明
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp(169,20): message : 尝试匹配参数列表“()”时
+  main.cpp
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Manager.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Book.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\AbstractUser.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Reader.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(40,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(55,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(56,21): error C2065: “t_str”: 未声明的标识符
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(56,30): error C2059: 语法错误:“)”
+D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp(57,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+  正在生成代码...

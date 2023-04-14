@@ -23,43 +23,7 @@ class Manager: public AbstractUser
 private:
 
 public:
-    /**
-     * @brief 添加书籍
-     * @todo
-     * @param t_id 书籍id
-     * @param t_name 书籍名
-     * @param t_quantity 进货数量
-     * @return bool 
-     *      @retval true 添加成功
-     *      @retval false 添加失败
-     */
-    bool addBook(const std::string& t_id, const std::string& t_name, const int& t_quantity)
-    {
-        // if (uptr_book != 0)
-        // {
-        //     std::cout << "添加成功" << std::endl;
-        //     return true;
-        // }
-        // else
-        // {
-        //     std::cout << "添加失败" << std::endl;
-        //     return false;
-        // }
-        return false;
-    }
-    /**
-     * @brief 添加读者
-     * @todo
-     * @param t_id 读者id
-     * @param t_name 读者名
-     * @return bool 
-     *      @retval true 添加成功
-     *      @retval false 添加失败
-     */
-    bool addReader()
-    {
-        return false;
-    }
+    
     /**
      * @brief 管理员找书
      * @todo 
@@ -68,7 +32,7 @@ public:
      *      @retval true 添加成功
      *      @retval false 添加失败
      */
-    bool findBook(const std::string& t_bookNameOrId)
+    bool findBook()
     {
         return false;
     }

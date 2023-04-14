@@ -22,7 +22,7 @@
  */
 class Reader: public AbstractUser
 {
-private:
+public:
     std::vector<Book> m_borrowBook_vec;
 public:
     /**
@@ -82,7 +82,7 @@ public:
      *      @retval true 查找成功
      *      @retval false 查找失败
      */
-    bool findBook(const std::string& t_bookNameOrId)
+    bool findBook()
     {
         return false;
     }

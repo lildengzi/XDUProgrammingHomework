@@ -21,7 +21,7 @@ public:
     std::string m_name;
 public:
     virtual ~AbstractUser() = 0;
-    virtual bool findBook(const std::string& t_bookNameOrId) = 0;
+    virtual bool findBook() = 0;
 
     virtual void showInfo() = 0;
 };

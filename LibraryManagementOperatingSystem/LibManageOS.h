@@ -26,6 +26,8 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <memory>
+#include <fstream>
 
 /** === Region: class LibManageOS ===
  * @brief 图书馆操作系统,用户分为管理员和读者两类，
@@ -37,9 +39,6 @@
 class LibManageOS
 {
 private:
-    Manager manager;
-    Reader reader;
-    Book book;
     std::vector<Book> m_book_vec;
     std::map<std::string, Reader> m_reader_map;
 public:
@@ -88,6 +87,27 @@ public:
      * @brief 管理者系统
      */
     void manageSystem();
+    /**
+     * @brief 添加书籍
+     * @todo
+     * @param t_id 书籍id
+     * @param t_name 书籍名
+     * @param t_quantity 进货数量
+     * @return bool 
+     *      @retval true 添加成功
+     *      @retval false 添加失败
+     */
+    bool addBook();
+    /**
+     * @brief 添加读者
+     * @todo
+     * @param t_id 读者id
+     * @param t_name 读者名
+     * @return bool 
+     *      @retval true 添加成功
+     *      @retval false 添加失败
+     */
+    bool addReader();
 };
 
 #endif //_LIBMANAGEOS_HPP

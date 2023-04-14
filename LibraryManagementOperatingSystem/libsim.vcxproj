@@ -99,6 +99,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
@@ -305,6 +306,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\AbstractUser.hpp" />
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Book.hpp" />
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Reader.hpp" />
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\Manager.hpp" />
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\command.hpp" />
+    <ClInclude Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.h" />
     <ClCompile Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\LibManageOS.cpp" />
     <ClCompile Include="D:\Repo\vscodeProject\vscCppworking\homework\LibraryManagementOperatingSystem\main.cpp" />
   </ItemGroup>

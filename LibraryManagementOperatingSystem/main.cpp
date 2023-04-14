@@ -31,31 +31,6 @@ int main(int argc, char* argv[])
 {
     LibManageOS *os = new LibManageOS;
 	string str = *argv;
-	/**
-	 * @code {.Libsim -a 2203}
-	 * if(strcmp("Libsim", argv[0]))
-	 * {
-	 * 		for(int i = 1; i < argc; i++)
-	 * 		{
-	 * 			if(strcmp("-a", argv[i]))
-	 * 			{
-	 * 				
-	 * 			}
-	 * 			...
-	 * 		}
-	 * }
-	 * else if(strcmp("exit", argv[0]))
-	 * {
-	 * 	...
-	 * }
-	 * else
-	 * {
-	 * 		cerr << "ERROR" << endl;
-	 * }
-	 * 
-	 * cout << "~su username >>>";
-	 * @endcode
-	 */
 	while (true)
 	{
 		os->helpMenu();

@@ -1,8 +1,8 @@
 #include "LibManageOS.h"
 
 #include <iostream>
-#include <fstream>
 #include <string>
+
 using namespace std;
 
 /**
@@ -13,25 +13,14 @@ constexpr auto FILENAME = "BookBorrowingRecords.txt";
 LibManageOS::LibManageOS()
 {
     this->init();
+    this->book = nullptr;
+    this->reader = nullptr;
+    this->manager = nullptr;
 }
 
 LibManageOS::~LibManageOS()
 {
-    if (manager != NULL)
-    {
-        delete manager;
-        manager = nullptr;
-    }
-    if (reader != NULL)
-    {
-        delete reader;
-        reader = nullptr;
-    }
-    if (book != NULL)
-    {
-        delete book;
-        book = nullptr;
-    }
+
 }
 
 void LibManageOS::exitMenu()
@@ -86,11 +75,12 @@ void LibManageOS::save()
         reader_ofs << key << "\t" << val.m_number << "\t" << val.m_name << "\t";
         for (auto &&i : val.m_borrowBook_vec)
         {
-            reader_ofs << i << "\t";
+            reader_ofs << i.m_id << "\t" << i.m_name << "\t";
         }
         reader_ofs << endl;
     }
-	ofs.close();
+	system_ofs.close();
+    reader_ofs.close();
 }
 
 void LibManageOS::init()
@@ -105,16 +95,8 @@ void LibManageOS::init()
         system_ifs >> attribute.m_id >> attribute.m_name >> attribute.m_quantity;
     }
 
-    for (auto &&[key, val] : m_reader_map)
-    {
-        reader_ifs >> key >> val.m_number >> val.m_name;
-        for (auto &&i : val.m_borrowBook_vec)
-        {
-            reader_ifs >> i;
-        }
-    }
-    
-	ifs.close();
+	system_ifs.close();
+    reader_ifs.close();
 }
 
 void LibManageOS::readerSystem()
@@ -131,14 +113,21 @@ void LibManageOS::readerSystem()
         case 1://注册
             signUp();
             break;
-        case 3://借书
-            reader.borrowBook();
+        case 2://借书
+            reader->borrowBook();
             break;
-        case 4://还书
-            reader.returnBook();
+        case 3://还书
+            reader->returnBook();
             break;
-        case 5://查询
-            reader.findBook();
+        case 4://查询
+            if (reader->findBook())
+            {
+                cout << "为你查找成功" << endl;
+            }
+            else
+            {
+                cout << "没有找到" << endl;
+            }
             break;
         default:
             cout << "你的输入有误" << endl;
@@ -164,18 +153,70 @@ void LibManageOS::manageSystem()
         case 0://退至主菜单
             return;
         case 1://添加书籍
-            manager.addBook();
+            if (this->addBook())
+                {cout << "添加书籍成功" << endl;}
+            else
+                {cout << "添加书籍失败" << endl;}
             break;
         case 2://添加读者
-            manager.addReader();
+            if (manager->addReader())
+                {cout << "添加读者成功" << endl;}
+            else
+                {cout << "添加读者失败" << endl;}
             break;
         case 3://查询书籍
-            manager.findBook();
+            if (manager->findBook())
+            {
+                cout << "为你查找成功" << endl;
+            }
+            else
+            {
+                cout << "没有找到" << endl;
+            }
             break;
         default:
             cout << "你的输入有误" << endl;
             break;
         }
+    }    
+}
+
+bool LibManageOS::addBook()
+{
+    string t_id;
+    string t_name;
+    int t_quantity;
+    cout << "请输入你想添加的书籍id和书籍名" << endl;
+    cin >> t_id >> t_name >> t_quantity;
+    unique_ptr<Book>book(new Book(t_id, t_name, t_quantity));
+    if (book != nullptr)
+    {
+        this->m_book_vec.push_back(book);
+        return true;
     }
-    
+    else
+    {
+        return false;
+    }
+    return false;
+}
+
+bool LibManageOS::addReader()
+{
+    string t_id;
+    string t_name;
+    cout << "请输入你想添加的读者id和读者名" << endl;
+    cin >> t_id >> t_name;
+    unique_ptr<Reader>reader(new Reader(t_id, t_name));
+    if (reader != nullptr)
+    {
+        cout << "请输入pin" << endl;
+        this->m_reader_map;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    return false;
 }
