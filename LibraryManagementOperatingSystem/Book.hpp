@@ -27,7 +27,7 @@ public:
      * @brief Construct a new Book object
      * @param id 
      * @param name 
-     * @param quantity
+     * @param quantity 
      */
     Book(const std::string& id, const std::string& name, const unsigned short int& quantity): m_id(id), m_name(name), m_quantity(quantity)
     {
