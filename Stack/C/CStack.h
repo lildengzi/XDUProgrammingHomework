@@ -5,39 +5,39 @@
 #include <stdio.h>
 #include <malloc.h>
 /**
- * @brief å †æ ˆå€¼åŸŸ
- * @param m_elem å­˜æ”¾çš„å€¼
+ * @brief ¶ÑÕ»ÖµÓò
+ * @param m_elem ´æ·ÅµÄÖµ
  */
 typedef struct Stack_range
 {
-    //æ ˆå€¼
+    //Õ»Öµ
     int m_elem;
     struct Stack_range *prev;
 }Stack_range;
 /**
- * @brief å †æ ˆ
- * @param top æ ˆé¡¶å…ƒç´ 
- * @param count æ ˆä½ä¸Šé™
- * @param next æ ˆå€¼åŸŸ
- * @param head å¤´èŠ‚ç‚¹
+ * @brief ¶ÑÕ»
+ * @param top Õ»¶¥ÔªËØ
+ * @param count Õ»Î»ÉÏÏÞ
+ * @param next Õ»ÖµÓò
+ * @param head Í·½Úµã
  */
 typedef struct
 {
-    //æ ˆé¡¶å…ƒç´ 
+    //Õ»¶¥ÔªËØ
     int top;
-    //æ ˆä½ä¸Šé™
+    //Õ»Î»ÉÏÏÞ
     int count;
-    //æ ˆå€¼åŸŸ
+    //Õ»ÖµÓò
     struct Stack_range *curr;
     struct Stack_range *head;
 }Stack;
 /**
- * @brief åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºæ»¡
+ * @brief ÅÐ¶ÏÕ»ÊÇ·ñÎªÂú
  * 
- * @param S ä¼ å…¥æ ˆ
+ * @param S ´«ÈëÕ»
  * @return int 
- *      @retval 1 æ˜¯
- *      @retval 0 å¦
+ *      @retval 1 ÊÇ
+ *      @retval 0 ·ñ
  */
 int isFull(Stack S)
 {
@@ -53,12 +53,12 @@ int isFull(Stack S)
     return 0;
 }
 /**
- * @brief åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºç©º
+ * @brief ÅÐ¶ÏÕ»ÊÇ·ñÎª¿Õ
  * 
- * @param S ä¼ å…¥æ ˆ
+ * @param S ´«ÈëÕ»
  * @return int 
- *      @retval 1 æ˜¯
- *      @retval 0 å¦
+ *      @retval 1 ÊÇ
+ *      @retval 0 ·ñ
  */
 int isEmpty(Stack S)
 {
@@ -74,17 +74,17 @@ int isEmpty(Stack S)
     return 0;
 }
 /**
- * @brief åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºæ»¡
+ * @brief ÅÐ¶ÏÕ»ÊÇ·ñÎªÂú
  * 
- * @param S ä¼ å…¥æ ˆ
- * @param elem åŽ‹å…¥å…ƒç´ 
+ * @param S ´«ÈëÕ»
+ * @param elem Ñ¹ÈëÔªËØ
  * @return void
  */
 void push(Stack *S, int elem)
 {
     if (isFull(*S))
     {
-        printf("åŽ‹å…¥å¤±è´¥ï¼Œæ ˆå·²æ»¡");
+        printf("Ñ¹ÈëÊ§°Ü£¬Õ»ÒÑÂú");
     }
     else if(S->head == NULL)
     {
@@ -106,16 +106,16 @@ void push(Stack *S, int elem)
     }
 }
 /**
- * @brief åˆ é™¤å¹¶è¿”å›žSçš„æ ˆé¡¶å…ƒç´ 
+ * @brief É¾³ý²¢·µ»ØSµÄÕ»¶¥ÔªËØ
  * 
- * @param S ä¼ å…¥æ ˆ
- * @return int æ ˆé¡¶å…ƒç´ 
+ * @param S ´«ÈëÕ»
+ * @return int Õ»¶¥ÔªËØ
  */
 int pop(Stack *S)
 {
     if (isEmpty(*S))
     {
-        printf("åˆ é™¤å¤±è´¥");
+        printf("É¾³ýÊ§°Ü");
     }
     else if(S->head == S->curr)
     {

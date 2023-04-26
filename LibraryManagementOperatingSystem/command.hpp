@@ -28,17 +28,17 @@ public:
      */
     int receiveCommand(const std::string& t_command)
     {
-        if (t_command.find("Libsim ") != -1)
+        if (t_command.compare("Libsim"))
         {
-            if (t_command.find("-help") != -1)
+            if (t_command.compare("-u"))
             {
                 return 1;
             }
             
-            if (t_command.find("-a") != -1)
+            if (t_command.compare("-a"))
             {
-                int pos = t_command.find("-a");
-                std::string t_str = t_command.substr(pos + 2, t_command.length() - 1);
+                int pos = ;
+                std::string t_str = t_command.substr(t_command.find("-u") + 2, t_command.length() - 1);
                 if (t_str == "123456")
                 {
                     std::cout << "user manager log in" << std::endl;
