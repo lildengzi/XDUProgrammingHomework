@@ -155,3 +155,5 @@ std::ostream& operator<<(std::ostream& out, const HighNumber& high)
 }
 
 #endif // _HIGHNNUMBER_HPP
+
+pri
